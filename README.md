@@ -1,24 +1,38 @@
 # README
+# Project: Bare metal forms with Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Basic usage of Rails routes, controller, models, views and sessions.
 
-Things you may want to cover:
+### Technology
 
-* Ruby version
+Ruby - Rails - ActiveRecord - PostgreSQL - SQLite 
 
-* System dependencies
+### Authors
 
-* Configuration
+- **Oscar De La Lanza** - [@oscardelalanza](https://github.com/oscardelalanza)
+- **Tiago Ferreira** - [@ferreirati](https://github.com/ferreirati)
 
-* Database creation
+### Links
 
-* Database initialization
+- **Assignment page** - [The Odin Project](hhttps://www.theodinproject.com/courses/ruby-on-rails/lessons/associations)
+- **Live** - [Demo on Heroku](#)
 
-* How to run the test suite
+### Database structure
+- users
+  - name: STR, required, max:80
+  - email: STR, required, index, unique, max:255
 
-* Services (job queues, cache servers, search engines, etc.)
+### Installation
+- `bundle --without production`
+- `yarn install --check-files`
+- `rails db:migrate` 
+- `rails db:seed`
 
-* Deployment instructions
+### Star development server
+- `rails server`
 
-* ...
+### Rails console
+- `rails console`
+
+### Integration tests
+- `rails tests`

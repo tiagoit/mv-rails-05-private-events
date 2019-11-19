@@ -13,6 +13,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-  
+    log_out_helper if logged_in_helper?
   end
 end

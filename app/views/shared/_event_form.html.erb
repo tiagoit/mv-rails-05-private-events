@@ -1,0 +1,14 @@
+<%= form_for(@event) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :description, placeholder: "Event description..." %>
+  </div>
+  <div class="field">
+    <%= f.text_field :location, placeholder: "Event location..." %>
+  </div>
+  <div class="field">
+    <%= f.datetime_select :date %>
+  </div>
+  <%= f.hidden_field :user_id, user_id: @event.user_id %>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

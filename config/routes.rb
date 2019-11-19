@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
 
-  get 'events/new'
-  get 'events/create'
-  get 'events/show'
-  get 'events/index'
   # Static pages
   root 'static_pages#home'
 
+  # Users
   resources :users, only: [:new, :create, :show]
   get '/signup', to: 'users#new'
 
+  # Auth
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
+  # Events
+  resources :events, only: [:index, :new, :create, :show]
+
 end

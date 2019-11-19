@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'events/new'
+  get 'events/create'
+  get 'events/show'
+  get 'events/index'
   # Static pages
   root 'static_pages#home'
 

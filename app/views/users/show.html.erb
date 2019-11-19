@@ -3,21 +3,20 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
         <%= @user.name %>
+        <%= @user.email %>
       </h1>
     </section>
   </aside>
-  <div class="col-md-8">
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-      <%= will_paginate @microposts %>
-    <% end %>
-  </div>
+<!--  <div class="col-md-8">-->
+    <%# if @user.microposts.any? %>
+<!--      <h3>Microposts (<%#= @user.microposts.count %>)</h3>-->
+<!--      <ol class="microposts">-->
+        <%#= render @microposts %>
+<!--      </ol>-->
+      <%#= will_paginate @microposts %>
+    <%# end %>
+<!--  </div>-->
 </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%#= link_to 'All Events', users_path %>

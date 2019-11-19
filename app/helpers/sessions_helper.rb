@@ -6,7 +6,7 @@ module SessionsHelper
 
   # this method is used to retrieve the actual user on the session
   def current_user_helper
-    @current_user ||= User.find_by(id: session[:id]) if session[:user_id]
+    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
 
   # this method is used to destroy the actual user's session

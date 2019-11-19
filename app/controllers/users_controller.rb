@@ -10,11 +10,15 @@ class UsersController < ApplicationController
       log_in_helper(@user)
       flash[:success] = 'Your account was created'
       redirect_to user_path @user
-      # TODO: continue here
+    else
+      flash[:danger] = 'Please try again.'
+      render :new
     end
   end
 
-  def show; end
+  def show
+    @user = User.find(params[:id])
+  end
 
   ################################################### private ##########################################################
   private

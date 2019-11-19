@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
-    return unless logged_in?
-
-    @events = current_user.events.paginate(page: params[:page])
+    # return unless logged_in_helper?
+    #
+    # @events = current_user_helper.events.paginate(page: params[:page])
   end
 end

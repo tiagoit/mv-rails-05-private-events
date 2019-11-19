@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:session][:email].downcase)
 
     if @user
-      # TODO: loggin user
+      log_in_helper(@user)
     else
       flash.now[:danger] = 'Invalid email'
       render 'new'

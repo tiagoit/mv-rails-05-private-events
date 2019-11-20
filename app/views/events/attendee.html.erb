@@ -20,8 +20,8 @@
     <h4>Invite users:</h4>
     <% @users.each do |u| %>
       <div>
-        <%= u.name %> | <%= u.email %> |
         <% if @attendees.where(user_id: u.id).none? %>
+          <%= u.name %> | <%= u.email %> |
           <%= link_to "Invite", attendance_path(user_id: u.id, event_id: @event.id), method: :post %>
         <% end %>
       </div>

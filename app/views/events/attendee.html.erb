@@ -5,12 +5,26 @@
 <div>Date: <%= @event.date.to_formatted_s(:long) %></div>
 <div>Owner: <%= @event.user.name %></div>
 <br>
-Invite users:
-<% @users.each do |u| %>
-  <div>
-    <%= u.name %> | <%= u.email %> |
-    <% if @attendees.where(user_id: u.id).none? %>
-      <%= link_to "Invite", attendance_path(user_id: u.id, event_id: @event.id), method: :post %>
+
+<div>
+  <h4>Invited Users</h4>
+  <ul>
+    <% @attendees.each do |u| %>
+      <li><%= u.user.name %> | <%= u.user.email %></li>
+    <% end %>
+  </ul>
+</div>
+
+<% if current_user_helper?(@event.user) %>
+  <div class="">
+    <h4>Invite users:</h4>
+    <% @users.each do |u| %>
+      <div>
+        <%= u.name %> | <%= u.email %> |
+        <% if @attendees.where(user_id: u.id).none? %>
+          <%= link_to "Invite", attendance_path(user_id: u.id, event_id: @event.id), method: :post %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 <% end %>

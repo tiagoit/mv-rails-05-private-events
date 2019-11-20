@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :new, :create, :show]
   
   # Attendance
-  get '/attendee', to: 'events#attendee'
+  get '/attendee/:event_id', to: 'events#attendee', as: 'attendee'
   post '/attendance', to: 'events#attendance'
 
 end

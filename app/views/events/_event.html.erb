@@ -7,6 +7,6 @@
     Happening on <%= event.date.to_s(:long) %>.
   </span>
   <% if current_user_helper?(event.user) %>
-    <%= link_to "Invite", attendee_path, event_id: event.id %>
+    <%= link_to "Invite", attendee_path(event.id) %>
   <% end %>
 </li>

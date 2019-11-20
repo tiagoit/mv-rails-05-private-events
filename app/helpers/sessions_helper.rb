@@ -11,7 +11,7 @@ module SessionsHelper
   
   # this method will validate if the user is the session user @Boolean
   def current_user_helper?(user)
-    user = current_user_helper
+    user == current_user_helper
   end
 
   # this method is used to destroy the actual user's session

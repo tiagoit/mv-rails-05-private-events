@@ -1,2 +1,16 @@
 <h1>Working</h1>
-<%= @event.id %>
+<div>ID: <%= @event.id %></div>
+<div>Description: <%= @event.description %></div>
+<div>Location: <%= @event.location %></div>
+<div>Date: <%= @event.date.to_formatted_s(:long) %></div>
+<div>Owner: <%= @event.user.name %></div>
+<br>
+Invite users:
+<% @users.each do |u| %>
+  <div>
+    <%= u.name %> | <%= u.email %> |
+    <% if @attendees.where(user_id: u.id).none? %>
+      <%= link_to "Invite", attendance_path(user_id: u.id, event_id: @event.id), method: :post %>
+    <% end %>
+  </div>
+<% end %>

@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
 
     @event = current_user_helper.events.build
     @events = Event.paginate(page: params[:page])
-    @previous = Event.joins(:attendees).previous_events
-    @next = Event.joins(:attendees).next_events
+    @previous = Event.joins(:attendees).previous_events.paginate(page: params[:page])
+    @next = Event.joins(:attendees).next_events.paginate(page: params[:page])
   end
 end

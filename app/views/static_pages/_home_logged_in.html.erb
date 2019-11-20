@@ -8,9 +8,15 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <h3>Previous Events</h3>
-    <%= render 'shared/events', collection: @previous %>
-    <h3>next Events</h3>
-    <%= render 'shared/events', collection: @next %>
+    <div>
+      <h3>Previous Events</h3>
+      <%= render @previous %>
+      <%= will_paginate @previous %>
+    </div>
+    <div>
+      <h3>Next Events</h3>
+      <%= render @next %>
+      <%= will_paginate @previous %>
+    </div>
   </div>
 </div>

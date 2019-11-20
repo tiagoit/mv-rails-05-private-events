@@ -11,14 +11,17 @@
   <div>
     <h4>My events</h4>
     <%= render @my_events %>
+    <%= will_paginate @my_events %>
   </div>
   <div>
     <h4>Previous Events</h4>
-    <%= render partial: 'events/event', collection: @previous %>
+    <%= render @previous %>
+    <%= will_paginate @previous %>
   </div>
   <div>
     <h4>Upcoming Events</h4>
-    <%= render partial: 'events/event', collection: @next %>
+    <%= render @next  %>
+    <%= will_paginate @next %>
   </div>
 
   <div class="col-md-8">

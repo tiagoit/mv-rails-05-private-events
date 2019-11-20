@@ -1,7 +1,10 @@
 class Event < ApplicationRecord
+  ################################################### relations ########################################################
   belongs_to :user
-  has_many :atendees
-  # has_many :users, through: :attendees
+  has_many :attendees
 
-  # has_and_belongs_to_many :users
+  #################################################### scopes ##########################################################
+  scope :previous_events, -> { where('date < ?', Time.now) }
+  scope :next_events, -> { where('date > ?', Time.now) }
+
 end

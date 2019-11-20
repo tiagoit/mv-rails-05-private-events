@@ -7,7 +7,7 @@ class CreateEventsTest < ActionDispatch::IntegrationTest
 
   test 'create a valid event' do
     log_in_as(@user.email)
-    assert is_logged_in?
+    assert logged_in?
     get root_path
     assert_select 'form'
     assert_difference 'Event.count', 1 do
@@ -27,6 +27,6 @@ class CreateEventsTest < ActionDispatch::IntegrationTest
       }
     end
     delete logout_path
-    assert_not is_logged_in?
+    assert_not logged_in?
   end
 end

@@ -2,7 +2,7 @@
 
 one:
   name: MyString
-  email: MyString
+  email: example@email.com
 
 two:
   name: MyString

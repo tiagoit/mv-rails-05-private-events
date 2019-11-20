@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-
   def create
     @event = Event.new(event_params)
 

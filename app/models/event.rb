@@ -6,5 +6,4 @@ class Event < ApplicationRecord
   #################################################### scopes ##########################################################
   scope :previous_events, -> { where('date < ?', Time.now) }
   scope :next_events, -> { where('date > ?', Time.now) }
-
 end

@@ -8,6 +8,11 @@ module SessionsHelper
   def current_user_helper
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
+  
+  # this method will validate if the user is the session user @Boolean
+  def current_user_helper?(user)
+    user = current_user_helper
+  end
 
   # this method is used to destroy the actual user's session
   def log_out_helper

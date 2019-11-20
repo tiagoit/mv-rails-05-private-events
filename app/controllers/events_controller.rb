@@ -19,6 +19,12 @@ class EventsController < ApplicationController
     end
   end
 
+  def attendee
+    @event = Event.find_by(id: params[:event_id])
+  end
+
+  def attendance; end
+
   ################################################### private ##########################################################
   private
 

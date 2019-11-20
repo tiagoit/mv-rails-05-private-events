@@ -26,15 +26,15 @@ class EventsController < ApplicationController
   end
 
   def attendance
-    debugger
-    atendee = Attendee.new(user_id: params['user_id'], event_id: params['event_id'])
-    if atendee.save
-      flash.now[:success] = 'User added to event'
-      redirect_to attendee_path(event_id: params['event_id'])
+    attendee = Attendee.new(user_id: params['user_id'], event_id: params['event_id'])
+
+    if attendee.save
+      flash[:success] = 'User added to event'
     else
-      flash.now[:danger] = 'Try again'
-      redirect_to attendee_path(event_id: params['event_id'])
+      flash[:danger] = 'Try again'
     end
+
+    redirect_to attendee_path(event_id: params['event_id'])
   end
 
   ################################################### private ##########################################################

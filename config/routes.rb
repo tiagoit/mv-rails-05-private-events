@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   # Events
-  resources :events, only: [:index, :new, :create, :show]
+  resources :events, only: [:create]
   
   # Attendance
   get '/attendee/:event_id', to: 'events#attendee', as: 'attendee'

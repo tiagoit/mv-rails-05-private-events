@@ -1,39 +1,22 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= @user.name %>
-        <%= @user.email %>
-      </h1>
-    </section>
-  </aside>
-  <div>
+  <div class="col-12 my-3">
+    <h4><%= @user.name %> | <%= @user.email %></h4>
+  </div>
+
+  <div class="col-12 my-3">
     <h4>My events</h4>
     <%= render @my_events %>
     <%= will_paginate @my_events %>
   </div>
-  <div>
+
+  <div class="col-12 my-3">
     <h4>Previous Events</h4>
     <%= render @previous %>
-    <%= will_paginate @previous %>
   </div>
-  <div>
+
+  <div class="col-12 my-3">
     <h4>Upcoming Events</h4>
     <%= render @next  %>
-    <%= will_paginate @next %>
-  </div>
-
-  <div class="col-md-8">
-    <%# if @attendee.any? %>
-<!--      <h3>Invitations</h3>-->
-<!--      <h3>Events (<%#= @attendee.count %>)</h3>-->
-<!--      <ol class="microposts">-->
-        <%#= render @attendee.events %>
-<!--      </ol>-->
-      <%#= will_paginate @attendee %>
-    <%# end %>
   </div>
 </div>
-
-<%#= link_to 'All Events', users_path %>

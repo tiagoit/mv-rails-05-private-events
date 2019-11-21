@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  def home
+  def index
     return unless logged_in_helper?
 
     @event = current_user_helper.events.build

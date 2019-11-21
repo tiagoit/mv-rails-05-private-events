@@ -1,0 +1,10 @@
+<li id="event-<%= event.id %>">
+  <span class="user"><%= link_to event.user.name, event.user %></span>
+  <span class="description">
+    <%= event.description %>
+  </span>
+  <span class="timestamp">
+    Happening on <%= event.date.to_s(:long) %>.
+  </span>
+  <%= link_to "Description", attendee_path(event.id) %>
+</li>

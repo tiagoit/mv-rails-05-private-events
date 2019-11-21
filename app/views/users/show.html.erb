@@ -1,0 +1,22 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <div class="col-12 my-3">
+    <h4><%= @user.name %> | <%= @user.email %></h4>
+  </div>
+
+  <div class="col-12 my-3">
+    <h4>My events</h4>
+    <%= render @my_events %>
+    <%= will_paginate @my_events %>
+  </div>
+
+  <div class="col-12 my-3">
+    <h4>Previous Events</h4>
+    <%= render @previous %>
+  </div>
+
+  <div class="col-12 my-3">
+    <h4>Upcoming Events</h4>
+    <%= render @next  %>
+  </div>
+</div>

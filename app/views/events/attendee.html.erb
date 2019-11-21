@@ -1,0 +1,30 @@
+<h1>Event description</h1>
+<div>ID: <%= @event.id %></div>
+<div>Description: <%= @event.description %></div>
+<div>Location: <%= @event.location %></div>
+<div>Date: <%= @event.date.to_formatted_s(:long) %></div>
+<div>Owner: <%= @event.user.name %></div>
+<br>
+
+<div>
+  <h4>Invited Users</h4>
+  <ul>
+    <% @attendees.each do |u| %>
+      <li><%= u.user.name %> | <%= u.user.email %></li>
+    <% end %>
+  </ul>
+</div>
+
+<% if current_user_helper?(@event.user) %>
+  <div class="">
+    <h4>Invite users:</h4>
+    <% @users.each do |u| %>
+      <div>
+        <% if @attendees.where(user_id: u.id).none? %>
+          <%= u.name %> | <%= u.email %> |
+          <%= link_to "Invite", attendance_path(user_id: u.id, event_id: @event.id), method: :post %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

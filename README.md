@@ -36,3 +36,7 @@ Ruby - Rails - ActiveRecord - PostgreSQL - SQLite
 
 ### Integration tests
 - `rails tests`
+
+## 📞 Contact
+
+Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/tiagoit-dev/) or drop me a line at <tiagoitferreira@gmail.com>.
